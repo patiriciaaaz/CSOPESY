@@ -1,5 +1,5 @@
 # CSOPESY
 
 
-> g++ -std=c++20 *.cpp -o emulator
+> g++ -std=c++20 main.cpp commands.cpp multiplescreen.cpp -o emulator
 > start emulator
