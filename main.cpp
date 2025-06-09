@@ -1,18 +1,13 @@
 #include <iostream>
 #include <string>
-#include <unordered_map>
-#include <functional>
+#include <sstream>
 #include "multiplescreen.h"
 #include "commands.h"
-
+#include "BarebonesProcess.h"
 
 int initialize() {
     return 1;
 }
-
-#include "commands.h"
-#include <iostream>
-#include <string>
 
 int main() {
     bool running = true;
@@ -36,10 +31,23 @@ int main() {
                 std::cout << "initialize the program first\n";
             }
         } else {
-            parseAndExecuteCommand(commandLine, running);
+            std::istringstream iss(commandLine);
+            std::string cmd, processName;
+            iss >> cmd >> processName;
+
+            if (cmd == "barebones-create") {
+                if (!processName.empty()) {
+                    createBarebonesProcess(processName);
+                } else {
+                    std::cout << "Usage: barebones-create <process_name>\n";
+                }
+            } else {
+                parseAndExecuteCommand(commandLine, running);
+            }
         }
     }
 
     std::cout << "Exiting program.\n";
     return 0;
 }
+
