@@ -208,6 +208,15 @@ void parseAndExecuteCommand(const std::string& commandLine, bool& running) {
                 return;
             }
             screenConsole(name);
+        } else if (option == "-ls") {
+            if (processCount == 0) {
+                std::cout << "No running screens found.\n";
+            } else {
+                std::cout << "There are " << processCount << " screen(s) running:\n";
+                for (int i = 0; i < processCount; ++i) {
+                    std::cout << "\t" << processes[i].name << "\n";
+                }
+            }
         } else {
             std::cout << "Unknown option for screen command.\n";
         }
