@@ -15,10 +15,6 @@
 
 class CPUAndScheduler;
 
-void createProcessWithoutInstructions(const std::string& name, int memSize);
-void createProcessWithInstructions(const std::string& name, int memSize, const std::string& instrStr);
-
-
 class MainManager : public std::enable_shared_from_this<MainManager> {
 public:
     MainManager();
@@ -38,5 +34,13 @@ private:
     std::vector<std::string> tokenize(const std::string& line);
     std::unordered_map<std::string, std::shared_ptr<ConsoleFormat>> screenRegistry;
     std::shared_ptr<ConsoleFormat> activeScreen = nullptr;
-};
 
+
+public:
+    void createProcessWithoutInstructions(const std::string& name, int memSize);
+    void createProcessWithInstructions(const std::string& name, int memSize, const std::string& instrStr);
+
+    bool isValidMemorySize(int size);
+    std::vector<std::string> splitInstructions(const std::string& instrStr);
+
+};

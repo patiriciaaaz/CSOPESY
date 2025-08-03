@@ -13,7 +13,7 @@ const std::string& Process::getPName() const {
     return pName;
 }
 
-std::uint32_t Process::getPId() {
+std::uint32_t Process::getPId() const {
     return pId;
 }
 
@@ -25,19 +25,19 @@ std::uint32_t Process::getInstructionLimit() const {
     return instructionLimit;
 }
 
-std::int32_t Process::getCPUIdWorkingOnIt() {
+std::int32_t Process::getCPUIdWorkingOnIt() const {
     return cpuIdWorkingOnIt;
 }
 
-std::time_t Process::getPCreationTime() {
+std::time_t Process::getPCreationTime() const {
     return pCreationTime;
 }
 
-std::time_t Process::getPEndTime() {
+std::time_t Process::getPEndTime() const {
     return pEndTime;
 }
 
-Process::ProcessState Process::getPState() {
+Process::ProcessState Process::getPState() const {
     return pState;
 }
 
@@ -69,6 +69,6 @@ void Process::nextInstruction() {
 }
 
 // Check if all instructions executed
-bool Process::hasFinished() {
+bool Process::hasFinished() const {
     return currentInstruction >= instructionLimit;
 }
