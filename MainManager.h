@@ -15,6 +15,10 @@
 
 class CPUAndScheduler;
 
+void createProcessWithoutInstructions(const std::string& name, int memSize);
+void createProcessWithInstructions(const std::string& name, int memSize, const std::string& instrStr);
+
+
 class MainManager : public std::enable_shared_from_this<MainManager> {
 public:
     MainManager();
@@ -35,3 +39,4 @@ private:
     std::unordered_map<std::string, std::shared_ptr<ConsoleFormat>> screenRegistry;
     std::shared_ptr<ConsoleFormat> activeScreen = nullptr;
 };
+
