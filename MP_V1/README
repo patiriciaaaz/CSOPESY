@@ -1,0 +1,2 @@
+1. Open MP_V1.sln in Visual Studio 2022. Ensure that its C++ Language standard is set to C++20
+2. Run the program by clicking start.
