@@ -1,0 +1,9 @@
+CPU Utilization: 0.00%
+Cores used: 0
+Cores available: 4
+
+--------------------------
+Running processes:
+
+Finished processes:
+p1          (06/23/2025 08:53:11PM)    Finished  1748/1748
